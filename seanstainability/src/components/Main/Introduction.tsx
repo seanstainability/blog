@@ -1,11 +1,13 @@
 import React, { FunctionComponent } from 'react';
 import styled from '@emotion/styled';
-import ProfileImage from 'components/Main/ProfileImage';
+import ProfileImage, { ProfileImageProps } from 'components/Main/ProfileImage';
+
+type IntroductionProps = ProfileImageProps;
 
 const Background = styled.div`
   width: 100%;
-  background-color: #8BC6EC;
-  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+  background-color: #8bc6ec;
+  background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
   color: #ffffff;
 `;
 
@@ -44,15 +46,17 @@ const Title = styled.div`
   }
 `;
 
-const Introduction: FunctionComponent = function () {
+const Introduction: FunctionComponent<IntroductionProps> = function ({
+  profileImage,
+}) {
   return (
     <Background>
       <Wrapper>
-        <ProfileImage />
+        <ProfileImage profileImage={profileImage} />
 
         <div>
-          <SubTitle>Frontend Web Developer,</SubTitle>
-          <Title>지속 가능한 개발자가 되고 싶은 Sean입니다.</Title>
+          <SubTitle>Nice to Meet You,</SubTitle>
+          <Title>I'm Junior Frontend Developer Hyun.</Title>
         </div>
       </Wrapper>
     </Background>

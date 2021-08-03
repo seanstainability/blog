@@ -1,17 +1,29 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useMemo } from 'react';
 import styled from '@emotion/styled';
 import PostItem from 'components/Main/PostItem';
+import { FluidObject } from 'gatsby-image';
 
-const POST_ITEM_DATA = {
-  title: 'JamStack',
-  date: '2021.07.29.',
-  categories: ['Architecture'],
-  summary:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident repellat doloremque fugit quis rem temporibus! Maxime molestias, suntrem debitis odit harum impedit. Modi cupiditate harum dignissimos eos in corrupti!',
-  thumbnail:
-    'https://d33wubrfki0l68.cloudfront.net/b7d16f7f3654fb8572360301e60d76df254a323e/385ec/img/svg/architecture.svg',
-  link: 'https://github.com/seanstainability',
+export type PostType = {
+  node: {
+    id: string;
+    frontmatter: {
+      title: string;
+      summary: string;
+      date: string;
+      categories: string[];
+      thumbnail: {
+        childImageSharp: {
+          fluid: FluidObject;
+        };
+      };
+    };
+  };
 };
+
+interface PostListProps {
+  selectedCategory: string;
+  posts: PostType[];
+}
 
 const PostListWrapper = styled.div`
   display: grid;
@@ -28,13 +40,34 @@ const PostListWrapper = styled.div`
   }
 `;
 
-const PostList: FunctionComponent = function () {
+const PostList: FunctionComponent<PostListProps> = function ({
+  selectedCategory,
+  posts,
+}) {
+  const postListData = useMemo(
+    () =>
+      posts.filter(
+        ({
+          node: {
+            frontmatter: { categories },
+          },
+        }: PostType) =>
+          selectedCategory !== 'All'
+            ? categories.includes(selectedCategory)
+            : true,
+      ),
+    [selectedCategory],
+  );
+
   return (
     <PostListWrapper>
-      <PostItem {...POST_ITEM_DATA} />
-      <PostItem {...POST_ITEM_DATA} />
-      <PostItem {...POST_ITEM_DATA} />
-      <PostItem {...POST_ITEM_DATA} />
+      {postListData.map(({ node: { id, frontmatter } }: PostType) => (
+        <PostItem
+          {...frontmatter}
+          link="<https://www.google.co.kr/>"
+          key={id}
+        />
+      ))}
     </PostListWrapper>
   );
 };
