@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `지속 가능한 개발자의 성장로그`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    author: `@seanstainability`,
+    siteUrl: 'http://seanstainability.s3-website.ap-northeast-2.amazonaws.com', // 배포 후 변경 예정
   },
   plugins: [
     {

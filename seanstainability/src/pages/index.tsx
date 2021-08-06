@@ -15,10 +15,18 @@ interface IndexPageProps {
     search: string;
   };
   data: {
+    site: {
+      siteMetadata: {
+        title: string;
+        description: string;
+        siteUrl: string;
+      };
+    };
     allMarkdownRemark: {
       edges: PostType[];
     };
     file: {
+      publicURL: string;
       childImageSharp: {
         fluid: ProfileImageProps['profileImage'];
       };
@@ -35,8 +43,12 @@ const Container = styled.div`
 const IndexPage: FunctionComponent<IndexPageProps> = function ({
   location: { search },
   data: {
+    site: {
+      siteMetadata: { title, description, siteUrl },
+    },
     allMarkdownRemark: { edges },
     file: {
+      publicURL,
       childImageSharp: { fluid },
     },
   },
@@ -73,7 +85,12 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
   );
 
   return (
-    <Template>
+    <Template
+      title={title}
+      description={description}
+      url={siteUrl}
+      image={publicURL}
+    >
       <Introduction profileImage={fluid} />
       <CategoryList
         selectedCategory={selectedCategory}
@@ -86,8 +103,15 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
 
 export default IndexPage;
 
-export const getPostList = graphql`
-  query getPostList {
+export const queryPostList = graphql`
+  query queryPostList {
+    site {
+      siteMetadata {
+        title
+        description
+        siteUrl
+      }
+    }
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date, frontmatter___title] }
     ) {
@@ -119,6 +143,7 @@ export const getPostList = graphql`
       }
     }
     file(name: { eq: "profile-image" }) {
+      publicURL
       childImageSharp {
         fluid(maxWidth: 120, maxHeight: 120, fit: INSIDE, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp
