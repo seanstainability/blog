@@ -58,9 +58,10 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "cname": "echo seanstainability.com > build/CNAME",
+    "cname": "echo seanstainability.com > static/CNAME",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby clean && gatsby build && cp build/CNAME ./public && gh-pages -d public -b main"
+    "predeploy": "yarn cname",
+    "deploy": "gatsby clean && gatsby build && cp CNAME ./public && gh-pages -d public -b main"
   },
   "repository": {
     "type": "git",
