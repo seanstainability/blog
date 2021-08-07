@@ -6,9 +6,9 @@ type IntroductionProps = ProfileImageProps;
 
 const Background = styled.div`
   width: 100%;
-  background-color: #8bc6ec;
-  background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
-  color: #ffffff;
+  background-color: #323f67;
+  // background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
+  color: #f0eadb;
 `;
 
 const Wrapper = styled.div`
@@ -38,11 +38,11 @@ const SubTitle = styled.div`
 
 const Title = styled.div`
   margin-top: 5px;
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 700;
 
   @media (max-width: 768px) {
-    font-size: 25px;
+    font-size: 20px;
   }
 `;
 
@@ -55,8 +55,8 @@ const Introduction: FunctionComponent<IntroductionProps> = function ({
         <ProfileImage profileImage={profileImage} />
 
         <div>
-          <SubTitle>Nice to Meet You,</SubTitle>
-          <Title>I'm Junior Frontend Developer Sean.</Title>
+          <SubTitle>Web Front-end Developer</SubTitle>
+          <Title>지속 가능한 개발자, Sean의 성장 로그</Title>
         </div>
       </Wrapper>
     </Background>

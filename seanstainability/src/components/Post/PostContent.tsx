@@ -30,6 +30,7 @@ const MarkdownRenderer = styled.div`
   h3 {
     font-weight: 800;
     margin-bottom: 30px;
+    color: #4a5170;
   }
 
   * + h1,
@@ -54,6 +55,10 @@ const MarkdownRenderer = styled.div`
 
   h3 {
     font-size: 20px;
+  }
+
+  strong {
+    color: #eb7261;
   }
 
   // Adjust Quotation Element Style

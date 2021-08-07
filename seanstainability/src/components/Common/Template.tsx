@@ -57,6 +57,9 @@ const Template: FunctionComponent<TemplateProps> = function ({
           content="820494e61e38fd34135d58e25cb2564d0d5c20dc"
         />
         <html lang="ko" />
+        <link rel="shortcut icon" href="./favicon.ico" />
+        <link rel="icon" href="./favicon.ico" />
+        <link rel="icon" type="image/png" href="favicon.ico" sizes="16x16" />
       </Helmet>
 
       <GlobalStyle />

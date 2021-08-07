@@ -1,8 +1,6 @@
 import React, { FunctionComponent, useMemo } from 'react';
 import Template from 'components/Common/Template';
 import styled from '@emotion/styled';
-import GlobalStyle from 'components/Common/GlobalStyle';
-import Footer from 'components/Common/Footer';
 import CategoryList, { CategoryListProps } from 'components/Main/CategoryList';
 import Introduction from 'components/Main/Introduction';
 import PostList, { PostType } from 'components/Main/PostList';
@@ -142,7 +140,7 @@ export const queryPostList = graphql`
         }
       }
     }
-    file(name: { eq: "profile-image" }) {
+    file(name: { eq: "profile" }) {
       publicURL
       childImageSharp {
         fluid(maxWidth: 120, maxHeight: 120, fit: INSIDE, quality: 100) {

@@ -16,7 +16,7 @@ const PostHeadInfoWrapper = styled.div`
   height: 100%;
   margin: 0 auto;
   padding: 60px 0;
-  color: #ffffff;
+  color: #fff;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -90,11 +90,25 @@ const PostHeadInfo: FunctionComponent<PostHeadInfoProps> = function ({
       </PrevPageIcon>
       <Title>{title}</Title>
       <PostData>
-        <div>{categories.join(' / ')}</div>
+        <div>
+          {categories.map(c => {
+            return <CategoryItem>{c}</CategoryItem>;
+          })}
+        </div>
         <div>{date}</div>
       </PostData>
     </PostHeadInfoWrapper>
   );
 };
+
+const CategoryItem = styled.span`
+  margin: 2.5px 5px;
+  padding: 3px 5px;
+  border-radius: 3px;
+  background: #00b288;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+`;
 
 export default PostHeadInfo;
