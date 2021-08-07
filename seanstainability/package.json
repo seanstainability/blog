@@ -60,8 +60,7 @@
     "clean": "gatsby clean",
     "cname": "echo seanstainability.com > build/CNAME",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "predeploy": "gatsby build",
-    "deploy": "yarn cname && gh-pages --add --dotfiles -d public -b main"
+    "deploy": "gatsby clean && gatsby build && cp CNAME ./public && gh-pages -d public -b main"
   },
   "repository": {
     "type": "git",
