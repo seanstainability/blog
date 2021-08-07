@@ -90,7 +90,7 @@ const PostHeadInfo: FunctionComponent<PostHeadInfoProps> = function ({
       </PrevPageIcon>
       <Title>{title}</Title>
       <PostData>
-        <div>
+        <div style={{ marginBottom: 15 }}>
           {categories.map(c => {
             return <CategoryItem>{c}</CategoryItem>;
           })}
