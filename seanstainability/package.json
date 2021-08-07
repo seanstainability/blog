@@ -1,5 +1,6 @@
 {
   "name": "blog-seanstainability",
+  "homepage": "/",
   "private": true,
   "description": "지속가능한 개발자가 되고 싶은 sean의 블로그입니다.",
   "version": "0.1.0",
@@ -58,8 +59,10 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "cname": "echo seanstainability.com > build\\CNAME",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build && gh-pages -d public -b main"
+    "predeploy": "gatsby build && npm run cname",
+    "deploy": "gh-pages -d public -b main"
   },
   "repository": {
     "type": "git",
