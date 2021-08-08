@@ -3,7 +3,7 @@ module.exports = {
     title: `Seanstainability | 지속 가능한 개발자, Sean의 성장 로그`,
     description: `웹 프론트엔드 개발을 하고 있습니다. 지속 가능성을 고민하는 개발자가 되고 싶습니다.`,
     author: `@seanstainability`,
-    siteUrl: 'https://seanstainability.github.io/',
+    siteUrl: 'https://seanstainability.com',
   },
   plugins: [
     {
@@ -15,7 +15,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://seanstainability.github.io/',
+        siteUrl: 'https://seanstainability.com',
         stripQueryString: true,
       },
     },
