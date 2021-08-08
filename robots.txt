@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://seanstainability.github.io/sitemap/sitemap-index.xml
-Host: https://seanstainability.github.io
+Sitemap: https://seanstainability.com/sitemap/sitemap-index.xml
+Host: https://seanstainability.com
