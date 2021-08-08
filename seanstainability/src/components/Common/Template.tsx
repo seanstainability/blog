@@ -58,7 +58,7 @@ const Template: FunctionComponent<TemplateProps> = function ({
         />
         <meta
           name="naver-site-verification"
-          content="820494e61e38fd34135d58e25cb2564d0d5c20dc"
+          content="d6015ade14e975907350df2fa426a24a4d6a1dbe"
         />
         <html lang="ko" />
         {/* favicon */}
