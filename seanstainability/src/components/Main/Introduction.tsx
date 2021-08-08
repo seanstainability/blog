@@ -52,7 +52,26 @@ const Introduction: FunctionComponent<IntroductionProps> = function ({
   return (
     <Background>
       <Wrapper>
-        <ProfileImage profileImage={profileImage} />
+        <div
+          style={{
+            width: '100%',
+            display: 'flex',
+          }}
+        >
+          <ProfileImage profileImage={profileImage} />
+          <div>
+            <a
+              href="https://github.com/seanstainability"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <i
+                className="fab fa-github"
+                style={{ fontSize: '2em', transform: 'translate(-100%, 0)' }}
+              ></i>
+            </a>
+          </div>
+        </div>
 
         <div>
           <SubTitle>Web Front-end Developer</SubTitle>
