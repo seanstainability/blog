@@ -18,10 +18,6 @@ const defaultStyle = css`
     height: 100%;
   }
 
-  code {
-    font-family: 'Nanum Gothic Coding', monospace;
-  }
-
   a,
   a:hover {
     color: inherit;

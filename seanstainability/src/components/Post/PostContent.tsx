@@ -101,8 +101,10 @@ const MarkdownRenderer = styled.div`
   }
 
   code[class*='language-'],
+  code[class*='language-'] span,
   pre[class*='language-'] {
     tab-size: 2;
+    font-family: 'Nanum Gothic Coding', monospace !important;
   }
 
   // Markdown Responsive Design
