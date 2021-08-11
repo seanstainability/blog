@@ -33,7 +33,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `contents`,
-        path: `${__dirname}/contents`,
+        path: `${__dirname}/contents/algorithm`,
       },
     },
     {
@@ -41,6 +41,20 @@ module.exports = {
       options: {
         name: `contents`,
         path: `${__dirname}/contents/javascript`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `contents`,
+        path: `${__dirname}/contents/python`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `contents`,
+        path: `${__dirname}/contents/updates`,
       },
     },
     {
