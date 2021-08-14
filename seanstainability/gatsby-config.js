@@ -68,6 +68,13 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `contents`,
+        path: `${__dirname}/contents/typescript`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `contents`,
         path: `${__dirname}/contents/common`,
       },
     },
