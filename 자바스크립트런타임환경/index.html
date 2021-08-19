@@ -23,7 +23,7 @@
 <li>마이크로 태스크 큐가 텅텅 비게 되면 이벤트 루프는 순회를 재개하고, 태스크 큐로 넘어온다. 태스크 큐에서는 하나의 콜백만 콜스택으로 데려와 콜스택에 머무르며 작업이 끝날 때까지 기다리고, 작업이 끝나면 다시 순회를 재개한다.</li>
 <li>화면에 업데이트할 시간이 되면 렌더 시퀀스에 들어와 먼저 requestAnimationFrame에 등록된 콜백 함수들을 하나 하나씩 다 실행한 다음 Render Tree를 생성하고, 트리를 이용하여 Layout을 계산한 다음, Paint를 통해 브라우저를 업데이트한다.</li>
 </ul>
-<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/78941d47-3c88-46f5-b960-e8a4eb143b69/js-runtime-env.png" alt="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/78941d47-3c88-46f5-b960-e8a4eb143b69/js-runtime-env.png">
+<p><img src="resources/js-runtime-env" alt="자바스크립트 브라우저 런타임 환경">
 [출처: 드림코딩 엘리 - 브라우저 강의]</p>
 <h3>코드 반박하기</h3>
 <div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx">button<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
